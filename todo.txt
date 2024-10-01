@@ -1,0 +1,36 @@
+- Monitoramento de transações:
+    Crédito e débito!
+    Grande quantidade de transações financeiras simuladas
+    Gravação de log detalhado;
+    Multithreads
+
+classe Transação:
+    id: único pra cada transação!
+    valor: valor da transação!
+    tipo: C or D;
+    - Método processar()'process_transition' aplicar transação em uma conta, alterando seu saldo.
+
+classe Conta 'account':
+    saldo: dinheiro em conta!
+    aplicar_transacao(transacao:Transacao) > aplica transação conta!
+        Crédito: add saldo!
+        Débito: Subtrai!
+    Saldo nunca pode ser negativo, caso contrário a transação deve ser ignorada!
+
+
+classe Logger:
+    grava as transações em um arquivo 'transacoes.log'
+    Thread-safe!
+    formado log:
+        '[TIMESTAMP] Transação <ID>: <TIPO> de R$<VALOR> aplicada com sucesso. Saldo atual:R$<SALDO>
+    Caso transação falhe:
+        '[TIMESTAMP] Transacao <ID> falhou:saldo insuficiente!
+
+Multithreads:
+    Irei fazer depois...
+
+Simulação de Transacao:
+    Lista com pelo menos 1k de transações aleatórias. As transações devem variar , crédito e débito , valores
+    de 1 - 500.
+    - Saldo inicial da conta: R$10.000
+
