@@ -7,6 +7,9 @@ class Account:
     def apply_transition(self,transacao):
         self.amount -= transacao.value
     
-    def deposit(): ...
+    def deposit(self,value):
+        self.amount+=value
     
-    def withdraw(): ...
+    def withdraw(self,value):
+        self.amount-=value
+        
