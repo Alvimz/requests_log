@@ -20,6 +20,7 @@ class Transition:
             transition_request = UniqueTransition(id,value_transition,type_of_transition,account_name.amount)
             log = Log()
             log.add_request_log(transition_request)
+            log.write_log()
            
             
             
@@ -27,10 +28,6 @@ if __name__ == '__main__':
     gabriel = Account()
     transacao_types = ['Crédito','Débito']
     
-    transacao = Transition(5,transacao_types)
-    
+    transacao = Transition(1100,transacao_types)
     transacao.process_transition(gabriel)
-    
-    
-    print(f'Saldo da conta: {gabriel.amount}')
     

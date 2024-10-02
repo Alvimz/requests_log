@@ -9,9 +9,9 @@ class Account:
     
     @amount.setter
     def amount(self,value):
-        if value<self._amount:
-            raise ValueError('Erro inesperado!')
-        return self._amount
+        if value < 0:
+            raise ValueError('Saldo insuficiente!')
+        self._amount = value
             
     
     def apply_transition(self,type_transition,value):
@@ -21,13 +21,10 @@ class Account:
             case 'Débito':
                 return self.withdraw(value)
                 
-                
-            
-    
     def deposit(self,value):
         self.amount+=value
         
     
     def withdraw(self,value):
-        self._amount-=value
+        self.amount-=value
         
