@@ -15,9 +15,11 @@ class Transition:
         for l in range(self.qnt_transitions):
             self.id +=1
             value_transition = self.value = randint(1,500)
-            currenty_type = choice(self.type_transition)
-            account_name.apply_transition(currenty_type,value_transition)
-
+            type_of_transition = choice(self.type_transition)
+            account_name.apply_transition(type_of_transition,value_transition)
+            self.transition_log((self.id,account_name.amount,type_of_transition,value_transition,))
+           
+            
             
     def transition_log(self,transition):
         self.transition_list.append(transition)
@@ -30,8 +32,10 @@ if __name__ == '__main__':
     gabriel = Account()
     transacao_types = ['Crédito','Débito']
     
-    transacao = Transition(500,transacao_types)
+    transacao = Transition(3,transacao_types)
     
     transacao.process_transition(gabriel)
+    print(transacao.transition_list)
+    
     print(f'Saldo da conta: {gabriel.amount}')
     

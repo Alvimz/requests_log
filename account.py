@@ -7,15 +7,16 @@ class Account:
     def apply_transition(self,type_transition,value):
         match type_transition:
             case 'Crédito':
-                self.deposit(value)
+                return self.deposit(value)
             case 'Débito':
-                self.withdraw(value)
+                return self.withdraw(value)
                 
                 
             
     
     def deposit(self,value):
         self.amount+=value
+        
     
     def withdraw(self,value):
         self.amount-=value
