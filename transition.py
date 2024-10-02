@@ -2,7 +2,7 @@ from account import Account
 from random import choice,randint
 from log import Log
 from unique_transition import UniqueTransition
-
+import threading
 class Transition:
     def __init__(self,qnt_transitions:int,type_transition:list) -> None:
         self.value = 0
