@@ -10,7 +10,7 @@ class Account:
     @amount.setter
     def amount(self,value):
         if value < 0:
-            raise ValueError('Saldo insuficiente!')
+            raise ValueError('Saldo insuficiente para transação!')
         self._amount = value
             
     

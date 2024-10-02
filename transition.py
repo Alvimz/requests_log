@@ -28,7 +28,7 @@ if __name__ == '__main__':
     gabriel = Account()
     transacao_types = ['Crédito','Débito']
     
-    transacao = Transition(11000,transacao_types)
+    transacao = Transition(1000,transacao_types)
     transacao.process_transition(gabriel)
     
     
