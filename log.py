@@ -4,13 +4,12 @@ from datetime import datetime
 class Log:
     def __init__(self) -> None:
         self.list_logs = list()
-        self.create_log()
     
     @staticmethod
     def create_log():
         if not os.path.exists('./log.txt'):
-            with open('log.txt','w') as f:
-                ...
+            with open('log.txt','w',encoding='utf-8') as f:
+                f.write('Log de transações!\n')
     
     def add_request_log(self,transition:UniqueTransition):
         self.list_logs.append(transition)
